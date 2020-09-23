@@ -16,7 +16,6 @@ module.exports = {
   plugins: ['vue'],
   // ここにカスタムルールを追加します。
   rules: {
-    'vue/html-indent': ['error', 2],
     'no-console': 'off', //console.log();OK
     'no-unused-vars': 'off', //使っていない変数あってもOK
     'vue/html-self-closing': [
@@ -28,7 +27,7 @@ module.exports = {
       },
     ],
     'vue/max-attributes-per-line': 'off', // １行あたり属性値の最大数を制限しない
-    'vue/singleline-html-element-content-newline': 'oFF',
+    'vue/singleline-html-element-content-newline': 'off', // HTMLタグが1列でもOK
     // prettierの設定
     'prettier/prettier': [
       'error',
