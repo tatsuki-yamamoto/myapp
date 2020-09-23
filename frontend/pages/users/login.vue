@@ -2,9 +2,7 @@
   <v-container>
     <v-card width="400px" class="mx-auto mt-5">
       <v-card-title>
-        <h1 class="display-1">
-          ログイン
-        </h1>
+        <h1 class="display-1">ログイン</h1>
       </v-card-title>
       <v-card-text>
         <v-form ref="form" lazy-validation>
@@ -48,7 +46,7 @@ export default {
     async loginWithAuthModule() {
       await this.$auth
         .loginWith('local', {
-         // emailとpasswordの情報を送信
+          // emailとpasswordの情報を送信
           data: {
             email: this.email,
             password: this.password,
@@ -56,15 +54,18 @@ export default {
         })
         .then(
           (response) => {
-　　　　　　　// レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
-            localStorage.setItem('access-token', response.headers['access-token'])
+            // レスポンスで返ってきた、認証に必要な情報をlocalStorageに保存
+            localStorage.setItem(
+              'access-token',
+              response.headers['access-token']
+            )
             localStorage.setItem('client', response.headers.client)
             localStorage.setItem('uid', response.headers.uid)
             localStorage.setItem('token-type', response.headers['token-type'])
             return response
           },
           (error) => {
-            alert("ログインできませんでした。")
+            alert('ログインできませんでした。')
             return error
           }
         )

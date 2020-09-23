@@ -3,9 +3,7 @@
     <v-container>
       <v-card width="400px" class="mx-auto mt-5">
         <v-card-title>
-          <h1 class="display-1">
-            メールアドレス変更
-          </h1>
+          <h1 class="display-1">メールアドレス変更</h1>
         </v-card-title>
         <v-card-text>
           <v-form ref="form" lazy-validation>
@@ -53,8 +51,8 @@ export default {
         .put('api/auth', this.user, {
           headers: {
             'access-token': localStorage.getItem('access-token'),
-            'uid': localStorage.getItem('uid'),
-            'client': localStorage.getItem('client'),
+            uid: localStorage.getItem('uid'),
+            client: localStorage.getItem('client'),
           },
         })
         .then((response) => {

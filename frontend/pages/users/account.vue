@@ -2,7 +2,7 @@
   <v-app>
     <v-container>
       <v-row>
-        <v-spacer></v-spacer>
+        <v-spacer />
         <v-col cols="12" lg="4">
           <v-row>
             <v-col
@@ -10,9 +10,7 @@
               lg="7"
               class="grey--text text--darken-3 font-weight-bold pa-2 text-h6"
             >
-              <p>
-                アカウント設定
-              </p>
+              <p>アカウント設定</p>
             </v-col>
           </v-row>
           <v-row class="my-5">
@@ -26,7 +24,7 @@
               </a>
             </v-col>
           </v-row>
-          <v-divider></v-divider>
+          <v-divider />
           <v-row class="my-5">
             <v-col cols="12" lg="7" class="pa-2">
               <a
@@ -39,7 +37,7 @@
             </v-col>
           </v-row>
         </v-col>
-        <v-spacer></v-spacer>
+        <v-spacer />
       </v-row>
     </v-container>
   </v-app>
@@ -55,12 +53,13 @@ export default {
         .delete('api/auth', {
           headers: {
             'access-token': localStorage.getItem('access-token'),
-            'client': localStorage.getItem('client'),
-            'uid': localStorage.getItem('uid'),
+            client: localStorage.getItem('client'),
+            uid: localStorage.getItem('uid'),
           },
         })
         .then((response) => {
           this.$auth.logout()
+          return response
         })
     },
   },
