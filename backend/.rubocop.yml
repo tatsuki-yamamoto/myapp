@@ -1,0 +1,38 @@
+require:
+  - rubocop-rails
+
+# copの有効化
+Rails:
+  Enabled: true
+
+# 自動生成したファイルはRubocopでチェックしない
+AllCops:
+  Exclude:
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'bin/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+    - 'tmp/**/*'
+    - 'config/**/*'
+    - 'node_modules/**/*'
+    - 'spec/*'
+
+# 日本語でのコメントを許可
+AsciiComments:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# 1行の最大文字数を150字にする
+LineLength:
+  Max: 150
+
+# ドキュメントのないclassを許可する
+Style/Documentation:
+  Enabled: false
+
+# rubocopをかけたときに警告が出たのでtrue or falseの選択
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
