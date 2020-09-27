@@ -16,21 +16,31 @@
             prepend-icon="mdi-lock"
             append-icon="mdi-eye-off"
             label="パスワード"
+            :type="showPassword ? 'text' : 'password'"
+            @click:append="showPassword = !showPassword"
           />
           <v-text-field
             v-model="user.password_confirmation"
             prepend-icon="mdi-lock"
             append-icon="mdi-eye-off"
             label="パスワード確認"
+            :type="showPassword_confirmation ? 'text' : 'password'"
+            @click:append="
+              showPassword_confirmation = !showPassword_confirmation
+            "
           />
           <v-card-actions>
             <v-btn
               color="light-green darken-1"
-              class="white--text"
+              dark
+              block
               @click="registerUser"
             >
               新規登録
             </v-btn>
+          </v-card-actions>
+          <v-card-actions>
+            <v-btn block to="/users/login">戻る</v-btn>
           </v-card-actions>
         </v-form>
       </v-card-text>
@@ -49,6 +59,8 @@ export default {
         email: '',
         password_confirmation: '',
       },
+      showPassword: false,
+      showPassword_confirmation: false,
     }
   },
   methods: {
