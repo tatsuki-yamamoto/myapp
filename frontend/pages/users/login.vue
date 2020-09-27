@@ -22,11 +22,25 @@
           <v-card-actions>
             <v-btn
               color="light-green darken-1"
-              class="white--text"
+              dark
+              block
               @click="loginWithAuthModule"
             >
               ログイン
             </v-btn>
+          </v-card-actions>
+          <v-card-actions>
+            <v-btn
+              color="light-blue darken-1"
+              dark
+              block
+              @click="testUserlogin"
+            >
+              確認用ログイン
+            </v-btn>
+          </v-card-actions>
+          <v-card-actions>
+            <v-btn color="darken-1" to="/users/signup" block>登録する</v-btn>
           </v-card-actions>
         </v-form>
       </v-card-text>
@@ -72,6 +86,11 @@ export default {
             return error
           }
         )
+    },
+    testUserlogin() {
+      this.email = 'example@example.com'
+      this.password = 'password'
+      this.loginWithAuthModule()
     },
   },
 }
