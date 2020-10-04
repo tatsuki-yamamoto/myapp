@@ -36,3 +36,7 @@ Style/Documentation:
 # rubocopをかけたときに警告が出たのでtrue or falseの選択
 Layout/EmptyLinesAroundAttributeAccessor:
   Enabled: true
+
+# Use nested module/class definitions instead of compact style. を無視
+Style/ClassAndModuleChildren:
+  Enabled: false

@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     mount_devise_token_auth_for 'User', at: 'auth'
+
+    resources :users, only: %i[show update index] do
+      get :current, on: :collection
+    end
   end
 end
