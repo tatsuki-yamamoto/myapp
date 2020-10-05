@@ -49,18 +49,10 @@ export default {
   data: () => ({}),
   methods: {
     deleteUser() {
-      this.$axios
-        .delete('api/auth', {
-          headers: {
-            'access-token': localStorage.getItem('access-token'),
-            client: localStorage.getItem('client'),
-            uid: localStorage.getItem('uid'),
-          },
-        })
-        .then((response) => {
-          this.$auth.logout()
-          return response
-        })
+      this.$axios.delete('api/auth').then((response) => {
+        this.$auth.logout()
+        return response
+      })
     },
   },
 }
